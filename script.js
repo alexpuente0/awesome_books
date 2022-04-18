@@ -39,3 +39,24 @@ function removeBookFromList(e) {
       localStorage.setItem("bookdata", JSON.stringify(booksArray));
 
 }
+
+function renderBooks(title, author, id) {
+  const book = `
+    <div class="book">
+        <h4 class="book-title">${title}</h4>
+        <h4 class="book-author">${author}</h4>
+        <h4 class="book-id">${id}</h4>
+        <button class="remove-btn" onclick="removeBookFromList(this)">Remove</button>
+    </div>`;
+
+  bookList.insertAdjacentHTML("beforeend", book);
+}
+
+function loadBooks() {
+  booksArray = localStorage.getItem(JSON.parse("bookdata"))
+  booksArray.forEach((book) => {
+renderBooks(book.title, book.author, book.id);
+  })
+}
+
+
