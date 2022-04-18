@@ -17,8 +17,8 @@ In this project we created an interactive page to add/remove elements to a list.
 
 👤 **Jordan Armijos**
 
-- GitHub: 
-- Twitter: 
+- GitHub:
+- Twitter:
 - LinkedIn:
 
 👤 **Alex Puente**
@@ -26,7 +26,6 @@ In this project we created an interactive page to add/remove elements to a list.
 - GitHub: [@alexpuente0](https://github.com/alexpuente0)
 - Twitter: [@zero_rock](https://twitter.com/zero_rock)
 - LinkedIn: [Alejandro Puente](https://www.linkedin.com/in/alejandro-puente-farías-154a7629/)
-
 
 ## 🤝 Contributing
 
@@ -39,7 +38,7 @@ Feel free to check the [issues page](https://github.com/alexpuente0/My-Portfolio
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
- 
+
 - Code Reviewers
 - Learning Partners
 - Microverse Staff and Micronauts
