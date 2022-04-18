@@ -19,6 +19,9 @@ function addBook() {
   bookList.insertAdjacentHTML("beforeend", book);
 
   console.log(booksArray);
+
+  localStorage.setItem("bookdata", JSON.stringify(booksArray));
+
 }
 
 addButton.addEventListener("click", addBook);
@@ -32,4 +35,7 @@ function removeBookFromList(e) {
         book.id = i;
         bookList.children[i].children[2].innerHTML = i;
     });
+
+      localStorage.setItem("bookdata", JSON.stringify(booksArray));
+
 }
