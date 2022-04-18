@@ -3,6 +3,8 @@ const authorInput = document.getElementById("author");
 const addButton = document.getElementById("button");
 const bookList = document.querySelector(".book-list");
 
+let booksArray = [];
+
 function addBook() {
   const book = `
     <div class="book">
@@ -12,10 +14,13 @@ function addBook() {
     </div>`;
 
   bookList.insertAdjacentHTML("beforeend", book);
+
+  booksArray.push({title: titleInput.value, author: authorInput.value, id: booksArray.length});
+  console.log(booksArray);
 }
 
 addButton.addEventListener("click", addBook);
 
 function removeBookFromList(e) {
-  e.parentElement.remove();
+  e.parentElement.remove();  
 }
