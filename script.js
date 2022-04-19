@@ -25,15 +25,15 @@ class BookEntry {
       bookTitle.innerHTML = `"${title}"`;
       bookAuthor.innerHTML = `by ${author}`;
       bookIdNumber.innerHTML = idNum;
-      removeButton.innerHTML = "Remove";
-      bookInfo.classList.add("bookinfo");
-      bookIdNumber.classList.add("counter");
-      removeButton.classList.add("rmbtn");
-          
+      removeButton.innerHTML = 'Remove';
+      bookInfo.classList.add('bookinfo');
+      bookIdNumber.classList.add('counter');
+      removeButton.classList.add('rmbtn');
+
       if (idNum % 2 === 0) {
-        bookBlock.classList.add("bookblock1");
+        bookBlock.classList.add('bookblock1');
       } else {
-        bookBlock.classList.add("bookblock2");
+        bookBlock.classList.add('bookblock2');
       }
 
       bookInfo.append(bookTitle, bookAuthor, bookIdNumber);
