@@ -1,3 +1,72 @@
 * {
-  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  background-color: azure;
+}
+
+.books {
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.book-list {
+  border: 2px solid black;
+  padding: 25px 50px;
+  width: 85%;
+  height: auto;
+}
+
+.bookblock {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  gap: 150px;
+}
+
+.bookinfo {
+  display: flex;
+  gap: 60px;
+  align-items: baseline;
+}
+
+.counter {
+  display: none;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 8px;
+  border: 2px solid black;
+  align-items: center;
+  filter: drop-shadow(5px 5px 2px black);
+}
+
+button:hover {
+  background-color: black;
+  color: azure;
+}
+
+.addbt {
+  width: 100px;
+  align-self: flex-end;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  border-top: 2px solid black;
+  max-width: 500px;
+}
+
+input {
+  margin: 25px 0;
+  border: 2px solid black;
+  height: 35px;
+  width: 200px;
 }
