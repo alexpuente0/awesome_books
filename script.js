@@ -1,7 +1,7 @@
-const titleInput = document.getElementById('title');
-const authorInput = document.getElementById('author');
-const addButton = document.getElementById('button');
-const bookList = document.querySelector('.book-list');
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const addButton = document.getElementById("button");
+const bookList = document.querySelector(".book-list");
 
 let booksArray = [];
 
@@ -16,16 +16,20 @@ class BookEntry {
 
   add() {
     function creaateAndSet(title, author, idNum) {
-      const bookBlock = document.createElement('div');
-      const bookInfo = document.createElement('div');
-      const bookTitle = document.createElement('h4');
-      const bookAuthor = document.createElement('h4');
-      const bookIdNumber = document.createElement('h4');
-      const removeButton = document.createElement('button');
-      bookTitle.innerHTML = `${title}`;
+      const bookBlock = document.createElement("div");
+      const bookInfo = document.createElement("div");
+      const bookTitle = document.createElement("h4");
+      const bookAuthor = document.createElement("h4");
+      const bookIdNumber = document.createElement("h4");
+      const removeButton = document.createElement("button");
+      bookTitle.innerHTML = `"${title}"`;
       bookAuthor.innerHTML = `by ${author}`;
       bookIdNumber.innerHTML = idNum;
-      removeButton.innerHTML = 'Remove';
+      removeButton.innerHTML = "Remove";
+      bookBlock.classList.add("bookblock");
+      bookInfo.classList.add("bookinfo");
+      bookIdNumber.classList.add("counter");
+      removeButton.classList.add("rmbtn");
 
       bookInfo.append(bookTitle, bookAuthor, bookIdNumber);
       bookBlock.append(bookInfo, removeButton);
@@ -48,13 +52,13 @@ class BookEntry {
         bookList.children[i].children[0].children[2].innerHTML = i;
         book.idNum = i;
       });
-      localStorage.setItem('bookdata', JSON.stringify(booksArray));
+      localStorage.setItem("bookdata", JSON.stringify(booksArray));
     }
-    element.addEventListener('click', removeBook);
+    element.addEventListener("click", removeBook);
   }
 
   static addBooks() {
-    if (titleInput.value !== '' && authorInput.value !== '') {
+    if (titleInput.value !== "" && authorInput.value !== "") {
       const newBook = new BookEntry(
         titleInput.value,
         authorInput.value,
@@ -63,15 +67,15 @@ class BookEntry {
       newBook.add();
       booksArray.push(newBook);
 
-      localStorage.setItem('bookdata', JSON.stringify(booksArray));
+      localStorage.setItem("bookdata", JSON.stringify(booksArray));
 
-      titleInput.value = '';
-      authorInput.value = '';
+      titleInput.value = "";
+      authorInput.value = "";
     }
   }
 
   static loadBooks() {
-    JSON.parse(localStorage.getItem('bookdata')).forEach((book, i) => {
+    JSON.parse(localStorage.getItem("bookdata")).forEach((book, i) => {
       const newBook = new BookEntry(book.title, book.author, i);
       newBook.add();
       booksArray.push(newBook);
@@ -79,7 +83,7 @@ class BookEntry {
   }
 }
 
-addButton.addEventListener('click', BookEntry.addBooks);
+addButton.addEventListener("click", BookEntry.addBooks);
 
 BookEntry.loadBooks();
 
