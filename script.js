@@ -5,7 +5,7 @@ const bookList = document.querySelector('.book-list');
 
 let booksArray = [];
 
-// eslint-disable no-unused-vars
+/* eslint-disable no-unused-vars */
 
 function removeBook(e) {
   booksArray.splice(e.parentElement.children[2].innerHTML, 1);
