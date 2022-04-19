@@ -4,6 +4,7 @@ const addButton = document.getElementById('button');
 const bookList = document.querySelector('.book-list');
 
 let booksArray = [];
+localStorage.setItem('bookdata', JSON.stringify(booksArray));
 
 /* eslint-disable no-unused-vars */
 
