@@ -4,7 +4,6 @@ const addButton = document.getElementById('button');
 const bookList = document.querySelector('.book-list');
 
 let booksArray = [];
-localStorage.setItem('bookdata', JSON.stringify(booksArray));
 
 /* eslint-disable no-unused-vars */
 
@@ -36,8 +35,10 @@ function renderBook(title, author, id) {
 function loadBooks() {
   if (localStorage.getItem('bookdata')) {
     booksArray = JSON.parse(localStorage.getItem('bookdata'));
+  } else {
+    booksArray = [];
   }
-  booksArray = JSON.parse(localStorage.getItem('bookdata'));
+
   booksArray.forEach((book) => {
     renderBook(book.title, book.author, book.id);
   });
@@ -59,3 +60,4 @@ function addBook() {
 
 addButton.addEventListener('click', addBook);
 loadBooks();
+
