@@ -26,10 +26,15 @@ class BookEntry {
       bookAuthor.innerHTML = `by ${author}`;
       bookIdNumber.innerHTML = idNum;
       removeButton.innerHTML = "Remove";
-      bookBlock.classList.add("bookblock");
       bookInfo.classList.add("bookinfo");
       bookIdNumber.classList.add("counter");
       removeButton.classList.add("rmbtn");
+          
+      if (idNum % 2 === 0) {
+        bookBlock.classList.add("bookblock1");
+      } else {
+        bookBlock.classList.add("bookblock2");
+      }
 
       bookInfo.append(bookTitle, bookAuthor, bookIdNumber);
       bookBlock.append(bookInfo, removeButton);
