@@ -1,9 +1,11 @@
-const titleInput = document.getElementById('title');
-const authorInput = document.getElementById('author');
-const addButton = document.getElementById('button');
-const bookList = document.querySelector('.book-list');
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const addButton = document.getElementById("button");
+const bookList = document.querySelector(".book-list");
 
 let booksArray = [];
+
+// eslint-disable-no-unused-vars;
 
 function removeBook(e) {
   booksArray.splice(e.parentElement.children[2].innerHTML, 1);
@@ -15,7 +17,7 @@ function removeBook(e) {
     bookList.children[i].children[2].innerHTML = i;
   });
 
-  localStorage.setItem('bookdata', JSON.stringify(booksArray));
+  localStorage.setItem("bookdata", JSON.stringify(booksArray));
 }
 
 function renderBook(title, author, id) {
@@ -27,22 +29,26 @@ function renderBook(title, author, id) {
           <button class="remove-btn" onclick="removeBook(this)">Remove</button>
       </div>`;
 
-  bookList.insertAdjacentHTML('beforeend', book);
+  bookList.insertAdjacentHTML("beforeend", book);
 }
 
 function loadBooks() {
-  booksArray = JSON.parse(localStorage.getItem('bookdata'));
+  booksArray = JSON.parse(localStorage.getItem("bookdata"));
   booksArray.forEach((book) => {
     renderBook(book.title, book.author, book.id);
   });
 }
 
 function addBook() {
-  booksArray.push({ title: titleInput.value, author: authorInput.value, id: booksArray.length });
-  localStorage.setItem('bookdata', JSON.stringify(booksArray));
+  booksArray.push({
+    title: titleInput.value,
+    author: authorInput.value,
+    id: booksArray.length,
+  });
+  localStorage.setItem("bookdata", JSON.stringify(booksArray));
 
   renderBook(titleInput.value, authorInput.value, booksArray.length);
 }
 
-addButton.addEventListener('click', addBook);
+addButton.addEventListener("click", addBook);
 loadBooks();
