@@ -14,22 +14,34 @@
 
 .book-list {
   border: 2px solid black;
-  padding: 25px 50px;
   width: 85%;
   height: auto;
 }
 
-.bookblock {
+.bookblock1 {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 15px;
+  padding: 15px 45px;
   gap: 150px;
+}
+
+.bookblock2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 45px;
+  gap: 150px;
+  background-color: rgba(182, 182, 182, 0.432);
+}
+
+.bookblock2 h4 {
+  background: none;
 }
 
 .bookinfo {
   display: flex;
   gap: 60px;
   align-items: baseline;
+  background: none;
 }
 
 .counter {
