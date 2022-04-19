@@ -33,14 +33,14 @@ class BookEntry {
 
       BookEntry.remove(removeButton);
     }
-    creaateAndSet(this.title, this.author, this.id);
+    creaateAndSet(this.title, this.author, this.idNum);
   }
 
   static remove(element) {
     function removeBook() {
       booksArray = booksArray.filter(
         (book) =>
-          +book.id !== +this.parentNode.children[0].children[2].innerHTML
+          +book.idNum !== +this.parentNode.children[0].children[2].innerHTML
       );
       this.parentNode.remove();
 
