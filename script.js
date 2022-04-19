@@ -60,4 +60,3 @@ function addBook() {
 
 addButton.addEventListener('click', addBook);
 loadBooks();
-
