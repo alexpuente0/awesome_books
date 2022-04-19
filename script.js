@@ -5,7 +5,7 @@ const bookList = document.querySelector(".book-list");
 
 let booksArray = [];
 
-// eslint-disable-no-unused-vars;
+// eslint-disable no-unused-vars
 
 function removeBook(e) {
   booksArray.splice(e.parentElement.children[2].innerHTML, 1);
@@ -22,11 +22,11 @@ function removeBook(e) {
 
 function renderBook(title, author, id) {
   const book = `
-      <div class="book">
-          <h4 class="book-title">${title}</h4>
-          <h4 class="book-author">${author}</h4>
-          <h4 class="book-id">${id}</h4>
-          <button class="remove-btn" onclick="removeBook(this)">Remove</button>
+      <div class='book'>
+          <h4 class='book-title'>${title}</h4>
+          <h4 class='book-author'>${author}</h4>
+          <h4 class='book-id'>${id}</h4>
+          <button class='remove-btn' onclick='removeBook(this)'>Remove</button>
       </div>`;
 
   bookList.insertAdjacentHTML("beforeend", book);
