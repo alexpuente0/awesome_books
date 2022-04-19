@@ -33,8 +33,8 @@ function renderBook(title, author, id) {
 }
 
 function loadBooks() {
-  if (localStorage.getItem("bookdata")) {
-    booksArray = JSON.parse(localStorage.getItem("bookdata"));
+  if (localStorage.getItem('bookdata')) {
+    booksArray = JSON.parse(localStorage.getItem('bookdata'));
   }
   booksArray = JSON.parse(localStorage.getItem('bookdata'));
   booksArray.forEach((book) => {
@@ -43,9 +43,9 @@ function loadBooks() {
 }
 
 function addBook() {
-    if (localStorage.getItem("bookdata")) {
-      booksArray = JSON.parse(localStorage.getItem("bookdata"));
-    }
+  if (localStorage.getItem('bookdata')) {
+    booksArray = JSON.parse(localStorage.getItem('bookdata'));
+  }
   booksArray.push({
     title: titleInput.value,
     author: authorInput.value,
