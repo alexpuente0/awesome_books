@@ -24,17 +24,10 @@ function renderBook(title, author, id) {
           <h4 class="book-title">${title}</h4>
           <h4 class="book-author">${author}</h4>
           <h4 class="book-id">${id}</h4>
-          <button class="remove-btn" onclick="${removeBook(this)}">Remove</button>
+          <button class="remove-btn" onclick="removeBook(this)">Remove</button>
       </div>`;
 
   bookList.insertAdjacentHTML('beforeend', book);
-}
-
-function addBook() {
-  booksArray.push({ title: titleInput.value, author: authorInput.value, id: booksArray.length });
-  localStorage.setItem('bookdata', JSON.stringify(booksArray));
-
-  renderBook(titleInput.value, authorInput.value, booksArray.length);
 }
 
 function loadBooks() {
@@ -44,5 +37,12 @@ function loadBooks() {
   });
 }
 
-loadBooks();
+function addBook() {
+  booksArray.push({ title: titleInput.value, author: authorInput.value, id: booksArray.length });
+  localStorage.setItem('bookdata', JSON.stringify(booksArray));
+
+  renderBook(titleInput.value, authorInput.value, booksArray.length);
+}
+
 addButton.addEventListener('click', addBook);
+loadBooks();
