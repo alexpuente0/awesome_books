@@ -55,6 +55,11 @@ body {
   text-shadow: none;
 }
 
+#datetime {
+display: flex;
+justify-content: right;
+}
+
 /* List Book Section */
 #list {
   height: auto;
