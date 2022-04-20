@@ -59,8 +59,7 @@ class BookEntry {
   static remove(element) {
     function removeBook() {
       booksArray = booksArray.filter(
-        (book) =>
-          +book.idNum !== +this.parentNode.children[0].children[2].innerHTML,
+        (book) => +book.idNum !== +this.parentNode.children[0].children[2].innerHTML,
       );
       this.parentNode.remove();
 
