@@ -5,6 +5,18 @@ const bookList = document.querySelector('#book-list');
 
 let booksArray = [];
 
+function timeRefresh() {
+  const rfRate = 1000;
+  mytime = setTimeout('dispClock()', rfRate);
+}
+
+function dispClock() {
+let dateTime = new Date();
+document.getElementById("datetime").innerHTML = dateTime;
+timeRefresh();
+}
+
+
 /* eslint-disable no-unused-vars */
 
 class BookEntry {
@@ -90,3 +102,19 @@ class BookEntry {
 addButton.addEventListener('click', BookEntry.addBooks);
 
 BookEntry.loadBooks();
+
+function changeSection(id) {
+  if (id.innerHTML === "List") {
+    document.getElementById("list").style.display = "block";
+    document.getElementById("add-new-book").style.display = "none";
+    document.getElementById("contact").style.display = "none";
+  } else if (id.innerHTML === "Add book") {
+    document.getElementById("list").style.display = "none";
+    document.getElementById("add-new-book").style.display = "block";
+    document.getElementById("contact").style.display = "none";
+  } else if (id.innerHTML === "Contact") {
+    document.getElementById("list").style.display = "none";
+    document.getElementById("add-new-book").style.display = "none";
+    document.getElementById("contact").style.display = "block";
+  }
+}
