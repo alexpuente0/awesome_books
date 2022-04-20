@@ -9,7 +9,11 @@ let booksArray = [];
 
 function timeRefresh() {
   const rfRate = 1000;
-  const mytime = setTimeout('dispClock()', rfRate);
+  const mytime = setTimeout(() => {
+    const dateTime = new Date();
+    document.getElementById('datetime').innerHTML = dateTime;
+    timeRefresh();
+  }, rfRate);
 }
 
 function dispClock() {
