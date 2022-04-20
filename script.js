@@ -9,7 +9,11 @@ let booksArray = [];
 
 function timeRefresh() {
   const rfRate = 1000;
-  let mytime = setTimeout('dispClock()', rfRate);
+  const mytime = setTimeout(() => {
+    const dateTime = new Date();
+    document.getElementById('datetime').innerHTML = dateTime;
+    timeRefresh();
+  }, rfRate);
 }
 
 function dispClock() {
@@ -17,8 +21,6 @@ function dispClock() {
   document.getElementById('datetime').innerHTML = dateTime;
   timeRefresh();
 }
-
-
 
 class BookEntry {
   constructor(title, author, idNum) {
@@ -35,7 +37,7 @@ class BookEntry {
       const bookAuthor = document.createElement('h4');
       const bookIdNumber = document.createElement('h4');
       const removeButton = document.createElement('button');
-      bookTitle.innerHTML = `"${title}"`;
+      bookTitle.innerHTML = `'${title}'`;
       bookAuthor.innerHTML = `by ${author}`;
       bookIdNumber.innerHTML = idNum;
       removeButton.innerHTML = 'Remove';
