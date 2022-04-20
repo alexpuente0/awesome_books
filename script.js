@@ -1,11 +1,26 @@
 const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
-const addButton = document.getElementById('button');
-const bookList = document.querySelector('.book-list');
+const addButton = document.getElementById('add-btn');
+const bookList = document.querySelector('#book-list');
+
+/* eslint-disable no-unused-vars */
 
 let booksArray = [];
 
-/* eslint-disable no-unused-vars */
+function timeRefresh() {
+  const rfRate = 1000;
+  const mytime = setTimeout(() => {
+    const dateTime = new Date();
+    document.getElementById('datetime').innerHTML = dateTime;
+    timeRefresh();
+  }, rfRate);
+}
+
+function dispClock() {
+  const dateTime = new Date();
+  document.getElementById('datetime').innerHTML = dateTime;
+  timeRefresh();
+}
 
 class BookEntry {
   constructor(title, author, idNum) {
@@ -22,18 +37,18 @@ class BookEntry {
       const bookAuthor = document.createElement('h4');
       const bookIdNumber = document.createElement('h4');
       const removeButton = document.createElement('button');
-      bookTitle.innerHTML = `"${title}"`;
+      bookTitle.innerHTML = `'${title}'`;
       bookAuthor.innerHTML = `by ${author}`;
       bookIdNumber.innerHTML = idNum;
       removeButton.innerHTML = 'Remove';
       bookInfo.classList.add('bookinfo');
       bookIdNumber.classList.add('counter');
-      removeButton.classList.add('rmbtn');
+      removeButton.classList.add('btn', 'rmbtn');
 
       if (idNum % 2 === 0) {
-        bookBlock.classList.add('bookblock1');
-      } else {
         bookBlock.classList.add('bookblock2');
+      } else {
+        bookBlock.classList.add('bookblock1');
       }
 
       bookInfo.append(bookTitle, bookAuthor, bookIdNumber);
@@ -55,6 +70,12 @@ class BookEntry {
       booksArray.forEach((book, i) => {
         bookList.children[i].children[0].children[2].innerHTML = i;
         book.idNum = i;
+
+        if (i % 2 === 0) {
+          bookList.children[i].className = 'bookblock2';
+        } else {
+          bookList.children[i].className = 'bookblock1';
+        }
       });
       localStorage.setItem('bookdata', JSON.stringify(booksArray));
     }
@@ -90,3 +111,19 @@ class BookEntry {
 addButton.addEventListener('click', BookEntry.addBooks);
 
 BookEntry.loadBooks();
+
+function changeSection(id) {
+  if (id.innerHTML === 'List') {
+    document.getElementById('list').style.display = 'block';
+    document.getElementById('add-new-book').style.display = 'none';
+    document.getElementById('contact').style.display = 'none';
+  } else if (id.innerHTML === 'Add book') {
+    document.getElementById('list').style.display = 'none';
+    document.getElementById('add-new-book').style.display = 'block';
+    document.getElementById('contact').style.display = 'none';
+  } else if (id.innerHTML === 'Contact') {
+    document.getElementById('list').style.display = 'none';
+    document.getElementById('add-new-book').style.display = 'none';
+    document.getElementById('contact').style.display = 'block';
+  }
+}

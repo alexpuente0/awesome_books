@@ -9,15 +9,45 @@
      <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
-    <section class="books">
-      <h1>Awesome Books</h1>
-      <div class="book-list"></div>
+  <body onload=dispClock();>
+    <header id="nav-bar">
+      <h1 id="nav-header">Awesome Books</h1>
+      <div id="tab-group">
+        <button class="tab" type="button" onclick="changeSection(this)">List</button>
+        <button class="tab" type="button" onclick="changeSection(this)">Add book</button>
+        <button class="tab" type="button" onclick="changeSection(this)">Contact</button>
+      </div>
+    </header>
+    <p id="datetime"></p>
+
+    <section id="list" class="books">
+      <h2 id="list-header" class="section-header">All Awesome Books</h2>
+      <div id="book-list"></div>
+      <footer>Copyright ...</footer>
+    </section>
+    
+    <section id="add-new-book">
+      <h2 id="add-new-header" class="section-header">Add a new book</h2>
       <form>
         <input type="text" id="title" placeholder="Title" />
         <input type="text" id="author" placeholder="Author" />
-        <button type="button" id="button" class="addbt">Add</button>
+        <button type="button" id="add-btn" class="btn">Add</button>
       </form>
+      <footer>Copyright ...</footer>
+    </section>
+    
+    <section id="contact">
+      <h2 id="contact-header" class="section-header">Contact information</h2>
+      <div id="contact-body">        
+        <p>Do have any questions or you just want to say "Hello"?</p>
+        <p>You can reach out to us!</p>
+        <ul id="contact-info-list">
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 0043586534422</li>
+          <li>Our address: Streetname 22, 84503 City, Country</li>
+        </ul>
+      </div>      
+      <footer>Copyright ...</footer>
     </section>
 
     <script src="script.js"></script>
