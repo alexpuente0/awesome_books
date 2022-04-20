@@ -11,11 +11,10 @@ function timeRefresh() {
 }
 
 function dispClock() {
-let dateTime = new Date();
-document.getElementById("datetime").innerHTML = dateTime;
-timeRefresh();
+  const dateTime = new Date();
+  document.getElementById('datetime').innerHTML = dateTime;
+  timeRefresh();
 }
-
 
 /* eslint-disable no-unused-vars */
 
@@ -104,17 +103,17 @@ addButton.addEventListener('click', BookEntry.addBooks);
 BookEntry.loadBooks();
 
 function changeSection(id) {
-  if (id.innerHTML === "List") {
-    document.getElementById("list").style.display = "block";
-    document.getElementById("add-new-book").style.display = "none";
-    document.getElementById("contact").style.display = "none";
-  } else if (id.innerHTML === "Add book") {
-    document.getElementById("list").style.display = "none";
-    document.getElementById("add-new-book").style.display = "block";
-    document.getElementById("contact").style.display = "none";
-  } else if (id.innerHTML === "Contact") {
-    document.getElementById("list").style.display = "none";
-    document.getElementById("add-new-book").style.display = "none";
-    document.getElementById("contact").style.display = "block";
+  if (id.innerHTML === 'List') {
+    document.getElementById('list').style.display = 'block';
+    document.getElementById('add-new-book').style.display = 'none';
+    document.getElementById('contact').style.display = 'none';
+  } else if (id.innerHTML === 'Add book') {
+    document.getElementById('list').style.display = 'none';
+    document.getElementById('add-new-book').style.display = 'block';
+    document.getElementById('contact').style.display = 'none';
+  } else if (id.innerHTML === 'Contact') {
+    document.getElementById('list').style.display = 'none';
+    document.getElementById('add-new-book').style.display = 'none';
+    document.getElementById('contact').style.display = 'block';
   }
 }

@@ -16,7 +16,6 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
   border: 4px solid black;
   border-radius: 2px;
   padding: 0 20px;
@@ -31,7 +30,6 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  
   margin: 10px 0;
 }
 
@@ -74,61 +72,9 @@ body {
   max-height: 380px;
   border: 2px solid black;
   margin: 25px auto;
-
   overflow: auto;
 }
 
-footer {
-  font-size: 22px;
-  text-align: left;
-  border: 4px solid black;
-  border-radius: 2px;
-  padding: 10px 15px;
-}
-
-/* Add New Book */
-form {  
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-
-  padding: 15px 0;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-input {
-  margin: 15px 0;
-  padding: 10px;
-  border: 2px solid black;
-}
-
-#add-btn {
-  width: 100px;
-  align-self: flex-end;
-}
-
-/* Contact Information */
-#contact-body {
-  width: 75%;
-  font-size: 18px;
-  margin: 0 auto;
-}
-
-#list,
-#add-new-book {
-  display: none;
-}
-
-.ooks {
-  margin: 100px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-}
-
-/* ------------------ */
 .bookblock1 {
   display: flex;
   justify-content: space-between;
@@ -174,3 +120,43 @@ input {
   color: azure;
 }
 
+footer {
+  font-size: 22px;
+  text-align: left;
+  border: 4px solid black;
+  border-radius: 2px;
+  padding: 10px 15px;
+}
+
+/* Add New Book */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 15px 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input {
+  margin: 15px 0;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+#add-btn {
+  width: 100px;
+  align-self: flex-end;
+}
+
+/* Contact Information */
+#contact-body {
+  width: 75%;
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+#add-new-book,
+#contact {
+  display: none;
+}
