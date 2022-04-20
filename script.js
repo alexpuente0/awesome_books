@@ -44,9 +44,9 @@ class BookEntry {
       removeButton.classList.add('btn', 'rmbtn');
 
       if (idNum % 2 === 0) {
-        bookBlock.classList.add('bookblock1');
-      } else {
         bookBlock.classList.add('bookblock2');
+      } else {
+        bookBlock.classList.add('bookblock1');
       }
 
       bookInfo.append(bookTitle, bookAuthor, bookIdNumber);
@@ -68,6 +68,12 @@ class BookEntry {
       booksArray.forEach((book, i) => {
         bookList.children[i].children[0].children[2].innerHTML = i;
         book.idNum = i;
+
+        if (i % 2 === 0) {
+          bookList.children[i].className = 'bookblock2';
+        } else {
+          bookList.children[i].className = 'bookblock1';
+        }
       });
       localStorage.setItem('bookdata', JSON.stringify(booksArray));
     }
