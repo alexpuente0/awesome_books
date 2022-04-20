@@ -1,6 +1,6 @@
 const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
-const addButton = document.getElementById('button');
+const addButton = document.getElementById('add-btn');
 const bookList = document.querySelector('#book-list');
 
 let booksArray = [];
