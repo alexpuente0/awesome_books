@@ -15,11 +15,11 @@ In this project we created an interactive page to add/remove elements to a list.
 
 ## Authors
 
-👤 **Jordan Armijos**
+👤 **Jordan A**
 
-- GitHub:
-- Twitter:
-- LinkedIn:
+- GitHub: [Jord4N-AC](https://github.com/Jord4N-AC)
+- Twitter: [@jordan12AC](https://twitter.com/jordan12AC)
+- LinkedIn: [Camilo Armijos](https://www.linkedin.com/in/camilo-armijos-2b9648197)
 
 👤 **Alex Puente**
 
