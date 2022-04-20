@@ -4,6 +4,13 @@
   background-color: azure;
 }
 
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  height: 100vh;
+}
+
 /* Navigation Bar */
 #nav-bar {
   display: flex;
@@ -49,7 +56,41 @@
   text-shadow: none;
 }
 
-.books {
+/* List Book Section */
+#list {
+  height: auto;
+  margin-bottom: 0;
+}
+
+.section-header {
+  text-align: center;
+  font-size: 38px;
+  font-weight: bolder;
+}
+
+#book-list {
+  width: 85%;
+  max-height: 380px;
+  border: 2px solid black;
+  margin: 25px auto;
+
+  overflow: auto;
+}
+
+#add-new-book,
+#contact {
+  display: none;
+}
+
+footer {
+  font-size: 22px;
+  text-align: left;
+  border: 4px solid black;
+  border-radius: 2px;
+  padding: 10px 15px;
+}
+
+.ooks {
   margin: 100px 0;
   display: flex;
   flex-direction: column;
@@ -57,11 +98,6 @@
   gap: 25px;
 }
 
-.book-list {
-  border: 2px solid black;
-  width: 85%;
-  height: auto;
-}
 
 .bookblock1 {
   display: flex;
