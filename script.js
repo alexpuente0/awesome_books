@@ -3,11 +3,13 @@ const authorInput = document.getElementById('author');
 const addButton = document.getElementById('add-btn');
 const bookList = document.querySelector('#book-list');
 
+/* eslint-disable no-unused-vars */
+
 let booksArray = [];
 
 function timeRefresh() {
   const rfRate = 1000;
-  mytime = setTimeout('dispClock()', rfRate);
+  let mytime = setTimeout('dispClock()', rfRate);
 }
 
 function dispClock() {
@@ -16,7 +18,7 @@ function dispClock() {
   timeRefresh();
 }
 
-/* eslint-disable no-unused-vars */
+
 
 class BookEntry {
   constructor(title, author, idNum) {
