@@ -9,7 +9,7 @@ let booksArray = [];
 
 function timeRefresh() {
   const rfRate = 1000;
-  let mytime = setTimeout('dispClock()', rfRate);
+  const mytime = setTimeout('dispClock()', rfRate);
 }
 
 function dispClock() {
@@ -17,8 +17,6 @@ function dispClock() {
   document.getElementById('datetime').innerHTML = dateTime;
   timeRefresh();
 }
-
-
 
 class BookEntry {
   constructor(title, author, idNum) {
@@ -35,7 +33,7 @@ class BookEntry {
       const bookAuthor = document.createElement('h4');
       const bookIdNumber = document.createElement('h4');
       const removeButton = document.createElement('button');
-      bookTitle.innerHTML = `"${title}"`;
+      bookTitle.innerHTML = `'${title}'`;
       bookAuthor.innerHTML = `by ${author}`;
       bookIdNumber.innerHTML = idNum;
       removeButton.innerHTML = 'Remove';
@@ -61,7 +59,8 @@ class BookEntry {
   static remove(element) {
     function removeBook() {
       booksArray = booksArray.filter(
-        (book) => +book.idNum !== +this.parentNode.children[0].children[2].innerHTML,
+        (book) =>
+          +book.idNum !== +this.parentNode.children[0].children[2].innerHTML
       );
       this.parentNode.remove();
 
@@ -79,7 +78,7 @@ class BookEntry {
       const newBook = new BookEntry(
         titleInput.value,
         authorInput.value,
-        booksArray.length,
+        booksArray.length
       );
       newBook.add();
       booksArray.push(newBook);
