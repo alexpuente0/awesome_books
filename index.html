@@ -9,15 +9,16 @@
      <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
+  <body onload=dispClock();>
     <header id="nav-bar">
       <h1 id="nav-header">Awesome Books</h1>
       <div id="tab-group">
-        <button class="tab">List</button>
-        <button class="tab">Add book</button>
-        <button class="tab">Contact</button>
+        <button class="tab" onclick="changeSection(this)">List</button>
+        <button class="tab" onclick="changeSection(this)">Add book</button>
+        <button class="tab" onclick="changeSection(this)">Contact</button>
       </div>
     </header>
+    <p id="datetime"></p>
 
     <section id="list" class="books">
       <h2 id="list-header" class="section-header">All Awesome Books</h2>
