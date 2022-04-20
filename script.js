@@ -28,7 +28,7 @@ class BookEntry {
       removeButton.innerHTML = 'Remove';
       bookInfo.classList.add('bookinfo');
       bookIdNumber.classList.add('counter');
-      removeButton.classList.add('rmbtn');
+      removeButton.classList.add('btn', 'rmbtn');
 
       if (idNum % 2 === 0) {
         bookBlock.classList.add('bookblock1');
