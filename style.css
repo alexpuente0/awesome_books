@@ -19,7 +19,7 @@ body {
   border: 4px solid black;
   border-radius: 2px;
   padding: 0 20px;
-  box-shadow: 0 0 8px rgb(44, 55, 209);
+  box-shadow: 0 0 8px rgb(0, 0, 0);
 }
 
 #nav-header {
@@ -47,7 +47,8 @@ body {
 }
 
 .tab:hover {
-  text-shadow: 0 0 10px rgb(4, 42, 255);
+  font-weight: bolder;
+  text-decoration: underline;
 }
 
 .tab:active {
@@ -92,7 +93,7 @@ body {
   justify-content: space-between;
   padding: 15px 45px;
   gap: 150px;
-  background-color: rgba(182, 182, 182, 0.432);
+  background-color: rgba(0, 0, 0, 0.185);
 }
 
 .bookblock2 h4 {
