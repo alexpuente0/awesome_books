@@ -60,7 +60,7 @@ class BookEntry {
     function removeBook() {
       booksArray = booksArray.filter(
         (book) =>
-          +book.idNum !== +this.parentNode.children[0].children[2].innerHTML
+          +book.idNum !== +this.parentNode.children[0].children[2].innerHTML,
       );
       this.parentNode.remove();
 
@@ -78,7 +78,7 @@ class BookEntry {
       const newBook = new BookEntry(
         titleInput.value,
         authorInput.value,
-        booksArray.length
+        booksArray.length,
       );
       newBook.add();
       booksArray.push(newBook);
